@@ -1,0 +1,11 @@
+---
+- name: upstart service
+  become: true
+  template:
+    src: "gluster_exporter.upstart.j2"
+    dest: "/etc/init/gluster_exporter.conf"
+    owner: root
+    group: root
+    mode: "u=rw,go=r"
+  notify:
+    - restart gluster_exporter

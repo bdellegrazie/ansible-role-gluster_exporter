@@ -1,0 +1,90 @@
+---
+- name: group
+  become: true
+  group:
+    name: "{{ gluster_exporter_group }}"
+    state: present
+    system: true
+
+- name: user
+  become: true
+  user:
+    name: "{{ gluster_exporter_user }}"
+    group: "{{ gluster_exporter_group }}"
+    home: "{{ gluster_exporter_home }}"
+    createhome: false
+    shell: /sbin/nologin
+    comment: gluster_exporter
+    state: present
+    system: true
+
+- name: home
+  become: true
+  file:
+    path: "{{ gluster_exporter_home }}"
+    owner: "{{ gluster_exporter_user }}"
+    group: "{{ gluster_exporter_group }}"
+    mode: "u=rwx,g=rx,o="
+    state: directory
+
+- name: download tarball
+  become: true
+  get_url:
+    url: "{{ gluster_exporter_tarball_url }}"
+    checksum: "{{ gluster_exporter_tarball_checksum }}"
+    dest: "{{ prometheus_exporter_dist_dir }}/{{ gluster_exporter_signature }}.tar.gz"
+    owner: root
+    group: root
+    mode: "u=rw,go=r"
+
+- name: untar tarball
+  become: true
+  unarchive:
+    src: "{{ prometheus_exporter_dist_dir }}/{{ gluster_exporter_signature }}.tar.gz"
+    dest: "{{ prometheus_exporter_dist_dir }}"
+    owner: root
+    group: root
+    mode: "u=rwx,go=rx"
+    creates: "{{ gluster_exporter_dist_dir }}/gluster_exporter"
+
+- name: symlink
+  become: true
+  file:
+    src: "{{ gluster_exporter_dist_dir }}/gluster_exporter"
+    path: "{{ prometheus_exporter_dir }}/gluster_exporter"
+    owner: root
+    group: root
+    force: true
+    mode: "ugo=rwx"
+    state: link
+  notify: restart gluster_exporter
+
+- name: config
+  become: true
+  template:
+    src: "gluster_exporter.default.conf.j2"
+    dest: "/etc/default/gluster_exporter"
+    owner: root
+    group: root
+    mode: "u=rw,go=r"
+  notify: restart gluster_exporter
+
+- name: install service
+  include: service-{{ prometheus_exporter_service_mgr }}.yml
+
+- name: Service Enabled
+  become: true
+  service:
+    name: gluster_exporter
+    enabled: "{{ gluster_exporter_service_enable }}"
+    use: "{{ prometheus_exporter_service_mgr }}"
+  when: gluster_exporter_service_manage
+
+- name: Service State
+  become: true
+  service:
+    name: gluster_exporter
+    state: "{{ gluster_exporter_service_state }}"
+    use: "{{ prometheus_exporter_service_mgr }}"
+  register: _gluster_exporter_service_state
+  when: gluster_exporter_service_manage

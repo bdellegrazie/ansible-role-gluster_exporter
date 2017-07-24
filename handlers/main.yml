@@ -1,0 +1,11 @@
+---
+- name: restart gluster_exporter
+  become: true
+  become_user: root
+  service:
+    name: gluster_exporter
+    state: "{{ (gluster_exporter_service_state != 'stopped') | ternary('restarted', 'stopped') }}"
+    use: "{{ prometheus_exporter_service_mgr }}"
+  when: gluster_exporter_service_notify and (
+    _gluster_exporter_service_state is not defined or
+    not ( _gluster_exporter_service_state | changed ))

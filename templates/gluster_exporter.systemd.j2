@@ -1,0 +1,16 @@
+[Unit]
+Description=gluster_exporter - Exporter for machine metrics.
+Documentation=https://github.com/prometheus/gluster_exporter
+After=network.target
+
+[Service]
+User={{ gluster_exporter_user }}
+Group={{ gluster_exporter_group }}
+EnvironmentFile={{ gluster_exporter_config_file }}
+ExecStart={{ gluster_exporter_program }} $OPTIONS
+
+SyslogIdentifier=gluster_exporter
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

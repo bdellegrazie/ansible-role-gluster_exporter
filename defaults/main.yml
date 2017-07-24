@@ -1,0 +1,23 @@
+---
+gluster_exporter_user:   gluster_exporter
+gluster_exporter_group:  gluster_exporter
+
+gluster_exporter_version: "0.2.7"
+gluster_exporter_tarball_checksum: "sha1:3d92d5403392addeda00b9b7aaee4237ab432ccb"
+gluster_exporter_platform_suffix: "linux-amd64"
+
+gluster_exporter_signature: "gluster_exporter-{{ gluster_exporter_version }}.{{ gluster_exporter_platform_suffix }}"
+gluster_exporter_dist_dir: "{{ prometheus_exporter_dist_dir }}/{{ gluster_exporter_signature }}"
+gluster_exporter_tarball_url: "https://github.com/ofesseler/gluster_exporter/releases/download/v{{ gluster_exporter_version }}/{{ gluster_exporter_signature }}.tar.gz"
+gluster_exporter_program: "{{ prometheus_exporter_dir }}/gluster_exporter"
+gluster_exporter_home: "/var/lib/gluster_exporter"
+gluster_exporter_options: []
+
+gluster_exporter_config_file: /etc/default/gluster_exporter
+gluster_exporter_pid_path: "/var/run"
+gluster_exporter_log_path: "/var/log/gluster_exporter"
+
+gluster_exporter_service_manage: true
+gluster_exporter_service_enable: true
+gluster_exporter_service_state: started
+gluster_exporter_service_notify: true

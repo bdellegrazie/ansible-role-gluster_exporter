@@ -1,0 +1,11 @@
+---
+- name: sysvinit service
+  become: true
+  template:
+    src: "gluster_exporter.sysvinit.j2"
+    dest: "/etc/init.d/gluster_exporter"
+    owner: root
+    group: root
+    mode: "u=rwx,go=rx"
+  notify:
+    - restart gluster_exporter
