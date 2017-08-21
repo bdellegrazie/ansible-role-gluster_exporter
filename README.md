@@ -26,7 +26,7 @@ Other variables are in defaults/main.yml
 
     - hosts: all
       roles:
-        - { role: bdellegrazie.ansible-role-gluster_exporter }
+        - { role: bdellegrazie.gluster_exporter }
 
 # License
 
