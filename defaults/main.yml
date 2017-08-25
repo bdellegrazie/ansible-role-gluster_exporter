@@ -1,6 +1,6 @@
 ---
-gluster_exporter_user:   gluster_exporter
-gluster_exporter_group:  gluster_exporter
+gluster_exporter_user:   root
+gluster_exporter_group:  root
 
 gluster_exporter_version: "0.2.7"
 gluster_exporter_tarball_checksum: "sha1:3d92d5403392addeda00b9b7aaee4237ab432ccb"

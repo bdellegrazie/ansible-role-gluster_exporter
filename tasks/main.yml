@@ -5,6 +5,7 @@
     name: "{{ gluster_exporter_group }}"
     state: present
     system: true
+  when: gluster_exporter_group != 'root'
 
 - name: user
   become: true
@@ -17,6 +18,7 @@
     comment: gluster_exporter
     state: present
     system: true
+  when: gluster_exporter_user != 'root'
 
 - name: home
   become: true
@@ -26,6 +28,7 @@
     group: "{{ gluster_exporter_group }}"
     mode: "u=rwx,g=rx,o="
     state: directory
+  when: gluster_exporter_user != 'root'
 
 - name: download tarball
   become: true
