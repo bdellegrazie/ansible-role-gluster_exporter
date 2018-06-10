@@ -1,0 +1,12 @@
+---
+name: gluster_exporter
+title: Prometheus Gluster Exporter
+maintainer: Brett Delle Grazie
+copyright: N/A
+copyright_email: brett.dellegrazie@gmail.com
+license: MIT
+summary: Manage the Gluster Exporter
+version: 1.0.0
+supports:
+  - os-family: linux
+inspec_version: "~> 2.1"

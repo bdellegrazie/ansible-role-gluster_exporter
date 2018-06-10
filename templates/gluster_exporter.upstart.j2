@@ -10,8 +10,8 @@ setgid {{ gluster_exporter_group }}
 env name=gluster_exporter
 env prog={{ gluster_exporter_program }}
 env logdir={{ gluster_exporter_log_path }}
-env user={{ postgres_exporter_user }}
-env group={{ postgres_exporter_group }}
+env user={{ gluster_exporter_user }}
+env group={{ gluster_exporter_group }}
 
 pre-start script
   mkdir -p $logdir || true
