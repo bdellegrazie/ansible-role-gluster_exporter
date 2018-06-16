@@ -13,12 +13,6 @@ env logdir={{ gluster_exporter_log_path }}
 env user={{ gluster_exporter_user }}
 env group={{ gluster_exporter_group }}
 
-pre-start script
-  mkdir -p $logdir || true
-  chmod 0750 $logdir || true
-  chown $user:$group $logdir || true
-end script
-
 script
   if [ -f "{{ gluster_exporter_config_file }}" ] ; then
     . "{{ gluster_exporter_config_file }}"

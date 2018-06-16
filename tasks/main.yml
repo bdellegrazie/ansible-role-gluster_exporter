@@ -5,7 +5,7 @@
     name: "{{ gluster_exporter_group }}"
     state: present
     system: true
-  when: gluster_exporter_group != 'root'
+  when: gluster_exporter_group_manage | bool
 
 - name: user
   become: true
@@ -18,7 +18,7 @@
     comment: gluster_exporter
     state: present
     system: true
-  when: gluster_exporter_user != 'root'
+  when: gluster_exporter_user_manage | bool
 
 - name: home
   become: true
@@ -28,7 +28,16 @@
     group: "{{ gluster_exporter_group }}"
     mode: "u=rwx,g=rx,o="
     state: directory
-  when: gluster_exporter_user != 'root'
+  when: gluster_exporter_home_manage | bool
+
+- name: logs
+  become: true
+  file:
+    path: "{{ gluster_exporter_log_path }}"
+    owner: "{{ gluster_exporter_user }}"
+    group: "{{ gluster_exporter_group }}"
+    mode: "u=rwx,g=rx,o="
+    state: directory
 
 - name: download tarball
   become: true

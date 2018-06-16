@@ -1,6 +1,8 @@
 ---
 gluster_exporter_user:   root
+gluster_exporter_user_manage: false
 gluster_exporter_group:  root
+gluster_exporter_group_manage: false
 
 gluster_exporter_version: "0.2.7"
 gluster_exporter_tarball_checksum: "sha1:3d92d5403392addeda00b9b7aaee4237ab432ccb"
@@ -11,6 +13,7 @@ gluster_exporter_dist_dir: "{{ prometheus_exporter_dist_dir }}/{{ gluster_export
 gluster_exporter_tarball_url: "https://github.com/ofesseler/gluster_exporter/releases/download/v{{ gluster_exporter_version }}/{{ gluster_exporter_signature }}.tar.gz"
 gluster_exporter_program: "{{ prometheus_exporter_dir }}/gluster_exporter"
 gluster_exporter_home: "/var/lib/gluster_exporter"
+gluster_exporter_home_manage: true
 gluster_exporter_options: []
 
 gluster_exporter_config_file: /etc/default/gluster_exporter
