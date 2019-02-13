@@ -8,6 +8,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 ### Changed
+- Modified to use [Molecule](https://github.com/ansible/molecule) for tests
 ### Deprecated
 ### Removed
 ### Fixed

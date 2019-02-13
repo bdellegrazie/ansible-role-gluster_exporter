@@ -1,7 +1,7 @@
 ---
-gluster_exporter_user:   root
+gluster_exporter_user: root
 gluster_exporter_user_manage: false
-gluster_exporter_group:  root
+gluster_exporter_group: root
 gluster_exporter_group_manage: false
 
 gluster_exporter_version: "0.2.7"

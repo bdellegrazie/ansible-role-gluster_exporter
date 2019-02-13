@@ -1,0 +1,14 @@
+---
+port:
+  tcp6:9189:
+    listening: true
+
+# Process names are 15 characters max
+process:
+  gluster_exporte:
+    running: true
+
+service:
+  gluster_exporter:
+    enabled: true
+    running: true

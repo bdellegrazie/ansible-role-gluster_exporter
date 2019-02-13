@@ -8,4 +8,4 @@
     use: "{{ prometheus_exporter_service_mgr }}"
   when: gluster_exporter_service_notify and (
     _gluster_exporter_service_state is not defined or
-    not ( _gluster_exporter_service_state | changed ))
+    not ( _gluster_exporter_service_state is changed ))

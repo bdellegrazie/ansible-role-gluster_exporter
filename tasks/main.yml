@@ -90,7 +90,7 @@
     name: gluster_exporter
     enabled: "{{ gluster_exporter_service_enable }}"
     use: "{{ prometheus_exporter_service_mgr }}"
-  when: gluster_exporter_service_manage
+  when: gluster_exporter_service_manage | bool
 
 - name: Service State
   become: true
@@ -99,4 +99,4 @@
     state: "{{ gluster_exporter_service_state }}"
     use: "{{ prometheus_exporter_service_mgr }}"
   register: _gluster_exporter_service_state
-  when: gluster_exporter_service_manage
+  when: gluster_exporter_service_manage | bool
