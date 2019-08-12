@@ -8,13 +8,19 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 ### Changed
-- Modified to use [Molecule](https://github.com/ansible/molecule) for tests
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
 
 ## [2.0.0]
+### Changed
+- Modified to use [Molecule](https://github.com/ansible/molecule) for tests
+- Updated Ansible for Molecule to 2.8.3
+- Updated Goss verifier to 0.3.7
+- Updated pre-commit (minor)
+
+## [1.0.4]
 ### Changed
 - User, Group and Home are now separately managable
 - Log path creation moved to Ansible
@@ -26,5 +32,8 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Incorrect user/group reference in upstart config
 
-[1.0.2]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.1...v1.0.2
-[1.0.1]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.0...v1.0.1
+[v2.0.0]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.4...v2.0.0
+[v1.0.4]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.3...v1.0.4
+[v1.0.3]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.2...v1.0.3
+[v1.0.2]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.1...v1.0.2
+[v1.0.1]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.0...v1.0.1
