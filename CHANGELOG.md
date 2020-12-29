@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 ### Changed
+- Ansible for tests updated to 2.9.16
+- Pre-commit hooks updated
+- Travis distribution updated
+
 ### Deprecated
 ### Removed
 ### Fixed
