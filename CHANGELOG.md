@@ -8,14 +8,17 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 
 ### Added
 ### Changed
-- Ansible for tests updated to 2.9.16
-- Pre-commit hooks updated
-- Travis distribution updated
-
 ### Deprecated
 ### Removed
 ### Fixed
 ### Security
+
+## [2.0.2]
+### Added
+### Changed
+- Ansible for tests updated to 2.9.16
+- Pre-commit hooks updated
+- Travis distribution updated
 
 ## [2.0.1]
 ### Changed
@@ -42,9 +45,10 @@ and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.
 ### Fixed
 - Incorrect user/group reference in upstart config
 
-[v2.0.1]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v2.0.0...v2.0.1
-[v2.0.0]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.4...v2.0.0
-[v1.0.4]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.3...v1.0.4
-[v1.0.3]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.2...v1.0.3
-[v1.0.2]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.1...v1.0.2
-[v1.0.1]: https://github.com/bdellegrazie/ansible-role-postgresql_exporter/compare/v1.0.0...v1.0.1
+[v2.0.2]: https://github.com/bdellegrazie/ansible-role-gluster_exporter/compare/v2.0.1...v2.0.2
+[v2.0.1]: https://github.com/bdellegrazie/ansible-role-gluster_exporter/compare/v2.0.0...v2.0.1
+[v2.0.0]: https://github.com/bdellegrazie/ansible-role-gluster_exporter/compare/v1.0.4...v2.0.0
+[v1.0.4]: https://github.com/bdellegrazie/ansible-role-gluster_exporter/compare/v1.0.3...v1.0.4
+[v1.0.3]: https://github.com/bdellegrazie/ansible-role-gluster_exporter/compare/v1.0.2...v1.0.3
+[v1.0.2]: https://github.com/bdellegrazie/ansible-role-gluster_exporter/compare/v1.0.1...v1.0.2
+[v1.0.1]: https://github.com/bdellegrazie/ansible-role-gluster_exporter/compare/v1.0.0...v1.0.1
